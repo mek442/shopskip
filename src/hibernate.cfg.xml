@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/skipdb
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		<property name="hibernate.connection.password">
+			Linebounce12
+		</property>
+<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+
+	<property name="hibernate.c3p0.min_size">5</property>
+	<property name="hibernate.c3p0.max_size">20</property>
+	<property name="hibernate.c3p0.timeout">300</property>
+	<property name="hibernate.c3p0.max_statements">50</property>
+	<property name="hibernate.c3p0.idle_test_period">3000</property>
+	<property name="c3p0.acquire_increment">1</property>
+	<property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+  
+  <property name="hibernate.cache.use_second_level_cache">true</property>
+<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>
+<property name="net.sf.ehcache.configurationResourceName">ehcache.xml</property>
+  
+		<mapping class="com.skip.entity.user.User" />
+		<mapping class="com.skip.entity.shop.Shop" />
+		<mapping class="com.skip.entity.payment.Payment" />
+		<mapping class="com.skip.entity.purchases.Purchases" />
+		<mapping class="com.skip.entity.purchasedetails.Purchasedetails" />
+		<mapping class="com.skip.entity.product.Product" />
+		<mapping class="com.skip.entity.social.Social" />
+		<mapping class="com.skip.entity.token.Token" />
+
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+    monitoring="autodetect" dynamicConfig="true">
+ 
+    <diskStore path="java.io.tmpdir/ehcache" />
+ 
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="false"
+            maxElementsOnDisk="10000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+    /> 
+    <cache name="shop" maxEntriesLocalHeap="10000" eternal="false"
+        timeToIdleSeconds="500" timeToLiveSeconds="500">
+        <persistence strategy="localTempSwap" />
+    </cache>
+    
+    <cache name="product" maxEntriesLocalHeap="10000" eternal="false"
+        timeToIdleSeconds="500" timeToLiveSeconds="500">
+        <persistence strategy="localTempSwap" />
+    </cache>
+ 
+   
+</ehcache>
